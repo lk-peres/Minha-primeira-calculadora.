@@ -210,7 +210,6 @@ class GridButtons(QGridLayout):
 
         elif not invalidNumberLeft and not invalidDisplay:
             self._numberRight = displayText
-            self._op = operator
             self._equationResult()
             newDisplayText = self.display.text()
             self._op = operator
@@ -266,7 +265,7 @@ class GridButtons(QGridLayout):
 
     def _multiply(self, numberLeft: float, numberRight: float):
         total = f"{numberLeft * numberRight}"
-        isInteger(total)
+        total = isInteger(total)
         return self._showResult(total)
 
     def _divide(self, numberLeft: float, numberRight: float):
